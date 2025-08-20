@@ -41,8 +41,14 @@ const Projects = () => {
 
   const additionalProjects = [
     {
+      title: "Automated Salary Prediction & Employment Analytics",
+      description: "Developed ensemble ML models achieving 85%+ prediction accuracy on 12,000+ employment records from 4 integrated datasets.",
+      tech: ["Random Forest", "XGBoost", "Neural Networks", "Streamlit"],
+      metrics: ["85%+ accuracy", "12,000+ records", "4 datasets integrated"]
+    },
+    {
       title: "Machine Learning - Time Series Forecasting System",
-      description: "Developed production-ready LSTM forecasting model achieving 87.50% accuracy on air quality time-series prediction.",
+      description: "Production-ready LSTM forecasting model achieving 87.50% accuracy on air quality time-series prediction.",
       tech: ["LSTM", "Time Series", "TensorBoard", "StandardScaler"],
       metrics: ["87.50% accuracy", "RMSE: 0.3370", "R²: 0.8109"]
     },
@@ -63,6 +69,18 @@ const Projects = () => {
       description: "Research on novel neural network architecture eliminating matrix multiplication operations through ternary weight quantization.",
       tech: ["BitNet", "Quantization", "FPGA", "Language Modeling"],
       metrics: ["61% memory reduction", "10x lower inference memory", "4.57x speedup"]
+    },
+    {
+      title: "SQL Database Optimization for Movie Analytics",
+      description: "Architected comprehensive relational database with 15+ normalized tables for IMDb dataset, optimizing query performance by 30%.",
+      tech: ["SQL", "PostgreSQL", "Database Design", "Power BI"],
+      metrics: ["4+ million records", "30% performance improvement", "6+ visualizations"]
+    },
+    {
+      title: "Job Market Trends Prediction Analytics",
+      description: "Architected predictive modeling system integrating university data and labor statistics to forecast job market trends.",
+      tech: ["Web Scraping", "API Integration", "8 ML Models", "Streamlit"],
+      metrics: ["75-86% accuracy", "SQLite integration", "32% job application increase"]
     }
   ];
 
@@ -79,7 +97,7 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {featuredProjects.map((project, index) => (
-            <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group">
+            <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group animate-scale-in hover-scale">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
@@ -141,9 +159,9 @@ const Projects = () => {
         {/* Additional Projects Grid */}
         <div>
           <h3 className="text-2xl font-bold mb-8 text-center">Additional Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalProjects.map((project, index) => (
-              <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group">
+              <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group animate-fade-in">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg group-hover:text-accent transition-smooth">
                     {project.title}

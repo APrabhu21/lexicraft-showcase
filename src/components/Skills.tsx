@@ -9,11 +9,11 @@ const Skills = () => {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
       skills: [
-        { name: "Python", level: 95, highlight: "Advanced" },
-        { name: "C/C++", level: 85, highlight: "Proficient" },
-        { name: "R", level: 80, highlight: "Proficient" },
+        { name: "Python", level: 95, highlight: "Expert" },
+        { name: "C/C++", level: 80, highlight: "Proficient" },
+        { name: "R", level: 70, highlight: "Intermediate" },
         { name: "SQL", level: 90, highlight: "Advanced" },
-        { name: "BASH/Linux", level: 85, highlight: "Proficient" },
+        { name: "BASH/Linux", level: 85, highlight: "Advanced" },
         { name: "Git", level: 90, highlight: "Advanced" }
       ]
     },
@@ -24,7 +24,7 @@ const Skills = () => {
         { name: "PyTorch", level: 95, highlight: "Expert" },
         { name: "TensorFlow", level: 85, highlight: "Advanced" },
         { name: "Scikit-learn", level: 90, highlight: "Advanced" },
-        { name: "XGBoost", level: 85, highlight: "Proficient" },
+        { name: "XGBoost", level: 80, highlight: "Proficient" },
         { name: "OpenCV", level: 90, highlight: "Advanced" },
         { name: "Transformers", level: 88, highlight: "Advanced" }
       ]
@@ -33,11 +33,11 @@ const Skills = () => {
       title: "Deployment & APIs",
       icon: <Cloud className="w-6 h-6" />,
       skills: [
-        { name: "Docker", level: 85, highlight: "Proficient" },
+        { name: "Docker", level: 85, highlight: "Advanced" },
         { name: "Streamlit", level: 90, highlight: "Advanced" },
-        { name: "FastAPI", level: 85, highlight: "Proficient" },
-        { name: "Flask", level: 80, highlight: "Proficient" },
-        { name: "Model Serving", level: 85, highlight: "Proficient" }
+        { name: "FastAPI", level: 80, highlight: "Proficient" },
+        { name: "Flask", level: 75, highlight: "Proficient" },
+        { name: "Model Serving", level: 85, highlight: "Advanced" }
       ]
     },
     {
@@ -45,10 +45,10 @@ const Skills = () => {
       icon: <Database className="w-6 h-6" />,
       skills: [
         { name: "Apache Spark", level: 80, highlight: "Proficient" },
-        { name: "Hadoop", level: 75, highlight: "Intermediate" },
-  { name: "Distributed Computing", level: 80, highlight: "Proficient" },
-        { name: "PostgreSQL", level: 85, highlight: "Proficient" },
-        { name: "Vector Databases", level: 85, highlight: "Proficient" }
+        { name: "Hadoop", level: 65, highlight: "Intermediate" },
+        { name: "Distributed Computing", level: 80, highlight: "Proficient" },
+        { name: "PostgreSQL", level: 85, highlight: "Advanced" },
+        { name: "Vector Databases", level: 85, highlight: "Advanced" }
       ]
     }
   ];
@@ -79,10 +79,10 @@ const Skills = () => {
 
   const getLevelBadge = (highlight: string) => {
     const colors = {
-      "Expert": "bg-green-100 text-green-800 border-green-200",
-      "Advanced": "bg-blue-100 text-blue-800 border-blue-200",
-      "Proficient": "bg-purple-100 text-purple-800 border-purple-200",
-      "Intermediate": "bg-orange-100 text-orange-800 border-orange-200"
+      "Expert": "bg-gradient-to-r from-green-500 to-emerald-600 text-white border-0",
+      "Advanced": "bg-gradient-to-r from-blue-500 to-cyan-600 text-white border-0",
+      "Proficient": "bg-gradient-to-r from-purple-500 to-violet-600 text-white border-0",
+      "Intermediate": "bg-gradient-to-r from-orange-500 to-amber-600 text-white border-0"
     };
     return colors[highlight as keyof typeof colors] || colors["Intermediate"];
   };

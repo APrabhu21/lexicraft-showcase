@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
         <div className="max-w-4xl mx-auto">
           <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-            MS Computer Science Graduate • 3.79 GPA
+            Available for ML Engineering Roles • Open to Relocate
           </Badge>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -36,10 +36,10 @@ const Hero = () => {
           </h2>
           
           <p className="text-lg md:text-xl leading-relaxed mb-12 text-white/80 max-w-3xl mx-auto">
-            Specializing in <span className="font-semibold text-white">deep learning</span> and{' '}
-            <span className="font-semibold text-white">computer vision</span>. Proven track record developing{' '}
-            <span className="font-semibold text-white">end-to-end ML solutions</span> from research to production,
-            optimizing large-scale workflows, and building real-time AI systems.
+            Proven ML engineer with expertise in <span className="font-semibold text-white">deep learning</span> and{' '}
+            <span className="font-semibold text-white">computer vision</span>. Demonstrated track record developing{' '}
+            <span className="font-semibold text-white">production-ready AI systems</span> that deliver measurable business impact,
+            from research prototypes to large-scale deployments serving thousands of users.
           </p>
           
           {/* Contact Links */}
