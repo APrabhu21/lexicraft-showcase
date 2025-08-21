@@ -36,7 +36,7 @@ const Education = () => {
             <CardContent>
               <div className="flex items-center gap-2 mb-4">
                 <Award className="w-5 h-5 text-accent" />
-                <span className="font-semibold text-lg">GPA: 3.79/4.0</span>
+                <span className="font-semibold text-lg">GPA: 3.815/4.0</span>
               </div>
               
               <div className="space-y-3">

@@ -55,7 +55,7 @@ const Skills = () => {
 
   const keyAchievements = [
     {
-      title: "3.79 Graduate GPA",
+      title: "3.815 Graduate GPA",
       description: "A grades in core ML/AI coursework",
       icon: <Award className="w-5 h-5" />
     },
