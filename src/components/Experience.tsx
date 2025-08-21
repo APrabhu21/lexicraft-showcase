@@ -57,7 +57,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-secondary">
+    <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Experience</h2>
@@ -66,63 +66,59 @@ const Experience = () => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-6">
           {experiences.map((experience, index) => (
-            <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0">
-              <CardHeader>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-gradient-primary rounded-lg text-white">
+            <Card key={index} className="transition-smooth hover:shadow-lg border bg-card">
+              <CardHeader className="pb-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary rounded-lg text-primary-foreground">
                       {experience.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-2xl">{experience.title}</CardTitle>
-                      <p className="text-lg font-medium text-muted-foreground">
+                      <CardTitle className="text-xl mb-1">{experience.title}</CardTitle>
+                      <p className="text-base font-medium text-muted-foreground">
                         {experience.company}
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col items-end gap-2">
-                    <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+                  <div className="text-right">
+                    <Badge variant="secondary" className="mb-2">
                       {experience.type}
                     </Badge>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <Calendar className="w-3 h-3" />
                       {experience.period}
                     </div>
                   </div>
                 </div>
               </CardHeader>
               
-              <CardContent className="space-y-6">
+              <CardContent className="pt-0 space-y-4">
                 {/* Key Achievements */}
-                <div>
-                  <h4 className="font-semibold mb-4">Key Achievements</h4>
-                  <div className="space-y-4">
-                    {experience.achievements.map((achievement, i) => (
-                      <div key={i} className="flex items-start gap-3 p-3 bg-background/50 rounded-lg">
-                        <div className="p-1 bg-accent/10 rounded text-accent mt-0.5">
-                          {achievement.icon}
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-sm leading-relaxed mb-1">
-                            {achievement.text}
-                          </p>
-                          <Badge variant="outline" className="bg-accent/10 text-accent border-accent/20 text-xs">
-                            {achievement.metric}
-                          </Badge>
-                        </div>
+                <div className="space-y-3">
+                  {experience.achievements.map((achievement, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="p-1 bg-accent/10 rounded text-accent mt-0.5 flex-shrink-0">
+                        {achievement.icon}
                       </div>
-                    ))}
-                  </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm leading-relaxed mb-1">
+                          {achievement.text}
+                        </p>
+                        <Badge variant="outline" className="text-xs">
+                          {achievement.metric}
+                        </Badge>
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 
                 {/* Skills */}
-                <div>
-                  <h4 className="font-semibold mb-3">Technologies & Skills</h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="pt-2 border-t">
+                  <div className="flex flex-wrap gap-1.5">
                     {experience.skills.map((skill, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
+                      <Badge key={i} variant="secondary" className="text-xs px-2 py-0.5">
                         {skill}
                       </Badge>
                     ))}
