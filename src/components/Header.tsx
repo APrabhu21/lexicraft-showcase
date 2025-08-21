@@ -48,7 +48,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - Left aligned */}
           <div className="flex items-center gap-2">
             <div className="p-2 bg-gradient-primary rounded-lg text-white">
               <User className="w-5 h-5" />
@@ -56,7 +56,7 @@ const Header = () => {
             <span className="font-bold text-lg">Atharva Prabhu</span>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Right aligned */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Button
@@ -67,7 +67,7 @@ const Header = () => {
                 className={`transition-all ${
                   activeSection === item.id 
                     ? "bg-primary text-primary-foreground" 
-                    : "hover:bg-muted"
+                    : "hover:bg-muted hover:text-foreground"
                 }`}
               >
                 {item.label}
@@ -75,11 +75,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Right aligned */}
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden hover:bg-muted hover:text-foreground"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
