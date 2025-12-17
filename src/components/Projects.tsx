@@ -1,10 +1,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ExternalLink, Github, Brain, Database, Eye, Zap } from "lucide-react";
+import { ExternalLink, Github, Brain, Database, Eye, Zap, Music } from "lucide-react";
 
 const Projects = () => {
   const featuredProjects = [
+    {
+      title: "Plailist - AI-Powered Dynamic Party DJ System",
+      description: "Architected real-time music recommendation system integrating Spotify/Apple Music APIs, Google Gemini LLM, and audio classification models to autonomously curate party playlists based on attendee preferences and crowd energy dynamics.",
+      icon: <Music className="w-6 h-6" />,
+      tech: ["Google Gemini", "Spotify API", "OAuth 2.0", "Audio Classification", "ElevenLabs TTS", "Real-time Sync"],
+      highlights: ["Multi-user preference aggregation", "AI DJ voice synthesis", "Dynamic playlist adaptation"],
+      type: "Full-Stack ML Application"
+    },
     {
       title: "AI-Powered Retrieval-Augmented Generation System",
       description: "Architected full-stack RAG pipeline integrating LangChain, OpenAI GPT-4, and Pinecone vector database to enable semantic search across 1000+ personal documents with sub-second query response times.",
@@ -63,12 +71,6 @@ const Projects = () => {
       description: "Comprehensive person detection pipeline using YOLOv8n architecture, achieving 95.0% mAP@0.5.",
       tech: ["YOLOv8n", "CRAFT", "Object Detection", "Text Recognition"],
       metrics: ["95.0% mAP@0.5", "92.9% precision", "20.6ms inference time"]
-    },
-    {
-      title: "Scalable MatMul-Free Language Modeling Research",
-      description: "Research on novel neural network architecture eliminating matrix multiplication operations through ternary weight quantization.",
-      tech: ["BitNet", "Quantization", "FPGA", "Language Modeling"],
-      metrics: ["61% memory reduction", "10x lower inference memory", "4.57x speedup"]
     },
     {
       title: "SQL Database Optimization for Movie Analytics",

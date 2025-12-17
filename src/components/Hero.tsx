@@ -36,10 +36,11 @@ const Hero = () => {
           </h2>
           
           <p className="text-lg md:text-xl leading-relaxed mb-12 text-white/80 max-w-3xl mx-auto">
-            Proven ML engineer with expertise in <span className="font-semibold text-white">deep learning</span> and{' '}
-            <span className="font-semibold text-white">computer vision</span>. Demonstrated track record developing{' '}
-            <span className="font-semibold text-white">production-ready AI systems</span> that deliver measurable business impact,
-            from research prototypes to large-scale deployments serving thousands of users.
+            MS Computer Science graduate (Dec 2025) with <span className="font-semibold text-white">3.815 GPA</span> specializing in{' '}
+            <span className="font-semibold text-white">deep learning</span> and <span className="font-semibold text-white">computer vision</span>.
+            Proven track record developing <span className="font-semibold text-white">end-to-end ML solutions</span> from research to production,
+            optimizing <span className="font-semibold text-white">large-scale workflows</span>, and building{' '}
+            <span className="font-semibold text-white">real-time AI systems</span>. Healthcare-adjacent background through bioinformatics research.
           </p>
           
           {/* Contact Links */}
