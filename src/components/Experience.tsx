@@ -5,6 +5,31 @@ import { Building2, Calendar, TrendingUp, Zap, FileText } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "AI/ML Intern",
+      company: "Filmic Technologies (via CSE 611)",
+      period: "Aug 2025 – Dec 2025",
+      type: "AI/ML Internship",
+      icon: <Building2 className="w-6 h-6" />,
+      achievements: [
+        {
+          text: "Architected end-to-end automated film digitization quality analysis pipeline using Snakemake workflow orchestration",
+          metric: "13 specialized ML models",
+          icon: <TrendingUp className="w-4 h-4" />
+        },
+        {
+          text: "Developed PyTorch-based computer vision models for sprocket hole detection, aspect ratio identification, and soundtrack recognition",
+          metric: "Automated technical analysis",
+          icon: <Zap className="w-4 h-4" />
+        },
+        {
+          text: "Built full-stack deployment with React frontend and MySQL backend for real-time quality monitoring",
+          metric: "Production-ready system",
+          icon: <FileText className="w-4 h-4" />
+        }
+      ],
+      skills: ["PyTorch", "Snakemake", "Computer Vision", "Whisper ASR", "React", "MySQL", "Docker"]
+    },
+    {
       title: "Bioinformatics Research Intern",
       company: "National Centre for Cell Science, Pune",
       period: "Aug 2023 – July 2024",
