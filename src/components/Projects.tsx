@@ -1,10 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ExternalLink, Github, Brain, Database, Eye, Zap, Music } from "lucide-react";
+import { ExternalLink, Github, Brain, Database, Eye, Zap, Music, Bot } from "lucide-react";
 
 const Projects = () => {
   const featuredProjects = [
+    {
+      title: "Production MLOps - Energy Demand Forecasting",
+      description: "Architected end-to-end MLOps platform for US electricity demand forecasting, orchestrating automated data pipelines, continuous model training, and real-time monitoring achieving MAE of 4,800 MWh on 24-hour forecasts with zero manual intervention.",
+      icon: <Zap className="w-6 h-6" />,
+      tech: ["LightGBM", "MLflow", "FastAPI", "Evidently AI", "GitHub Actions", "Streamlit"],
+      highlights: ["MAE: 4,800 MWh", "100% automation", "$0 infra cost"],
+      type: "Full-Stack MLOps System",
+      url: "https://mlops-energy.streamlit.app/"
+    },
     {
       title: "Plailist - AI-Powered Dynamic Party DJ System",
       description: "Architected real-time music recommendation system integrating Spotify/Apple Music APIs, Google Gemini LLM, and audio classification models to autonomously curate party playlists based on attendee preferences and crowd energy dynamics.",
@@ -40,7 +49,7 @@ const Projects = () => {
     {
       title: "Autonomous Ball-Tracking Quadruped Robot",
       description: "Implemented real-time computer vision pipeline using YOLOv8 for object detection and NanoTrack for continuous tracking, achieving robust ball detection under varying lighting conditions.",
-      icon: <Zap className="w-6 h-6" />,
+      icon: <Bot className="w-6 h-6" />,
       tech: ["YOLOv8", "NanoTrack", "PID Control", "ROS", "Unitree Go2 SDK", "Computer Vision"],
       highlights: ["Real-time tracking", "Varying lighting conditions", "Low-latency communication"],
       type: "Research Assistant, A2IL Lab"
@@ -116,12 +125,13 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-smooth">
-                      <Github className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-smooth">
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
+                    {project.url && (
+                      <Button variant="ghost" size="sm" asChild className="opacity-0 group-hover:opacity-100 transition-smooth">
+                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardHeader>
