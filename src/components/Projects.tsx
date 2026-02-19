@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ExternalLink, Github, Brain, Database, Eye, Zap, Music, Bot } from "lucide-react";
+import { ExternalLink, Github, Brain, Database, Eye, Zap, Music, Bot, Search } from "lucide-react";
 
 const Projects = () => {
   const featuredProjects = [
@@ -13,6 +13,15 @@ const Projects = () => {
       highlights: ["MAE: 4,800 MWh", "100% automation", "$0 infra cost"],
       type: "Full-Stack MLOps System",
       url: "https://mlops-energy.streamlit.app/"
+    },
+    {
+      title: "GrantMatcherAI - AI-Powered Grant Discovery",
+      description: "Architected full-stack grant matching platform integrating FastAPI backend, Next.js frontend, and PostgreSQL database, enabling AI-powered grant discovery for nonprofits, researchers, and startups with semantic search and hybrid scoring.",
+      icon: <Search className="w-6 h-6" />,
+      tech: ["FastAPI", "Next.js", "PostgreSQL", "FastEmbed", "Grants.gov API", "JWT Auth"],
+      highlights: ["Semantic vector matching", "$0 infra cost", "6-stage application tracking"],
+      type: "Full-Stack AI Application",
+      url: "https://grantmatcher-ai.vercel.app/"
     },
     {
       title: "Plailist - AI-Powered Dynamic Party DJ System",
