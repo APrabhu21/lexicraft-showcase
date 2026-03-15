@@ -9,11 +9,13 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import WaveDivider from "@/components/WaveDivider";
+import KonamiEasterEgg from "@/components/KonamiEasterEgg";
 
 const Index = () => {
   return (
     <>
       <CustomCursor />
+      <KonamiEasterEgg />
       <Header />
       <ScrollProgress />
       <main className="min-h-screen pt-16">
