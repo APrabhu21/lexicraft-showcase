@@ -119,5 +119,13 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    cursor: none;
+  }
+
+  /* Restore default cursor on touch devices */
+  @media (hover: none) {
+    body {
+      cursor: auto;
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Building2, Calendar, TrendingUp, Zap, FileText } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Experience = () => {
   const experiences = [
@@ -91,6 +92,25 @@ const Experience = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Building production systems and delivering impactful solutions across different domains
             </p>
+          </div>
+        </AnimatedSection>
+
+        {/* Impact stats strip */}
+        <AnimatedSection delay={0.1}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12">
+            {[
+              { value: 13, suffix: "", label: "ML Models Built" },
+              { value: 78, suffix: "%", label: "Compute Time Saved" },
+              { value: 10, suffix: "K+", label: "Datasets Processed" },
+              { value: 60, suffix: "%", label: "Faster Deployments" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2} />
+                </div>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </AnimatedSection>
 
