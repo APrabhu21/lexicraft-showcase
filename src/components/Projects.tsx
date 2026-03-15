@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ExternalLink, Github, Brain, Database, Eye, Zap, Music, Bot, Search } from "lucide-react";
+import { ExternalLink, Brain, Database, Eye, Zap, Music, Bot, Search } from "lucide-react";
+import AnimatedSection from "./AnimatedSection";
 
 const Projects = () => {
   const featuredProjects = [
@@ -52,7 +53,7 @@ const Projects = () => {
       description: "Developed production-ready Pix2Pix cGAN system for sketch-to-photo translation, achieving final generator loss of 3.68 and SSIM score of 0.86 on facial image generation.",
       icon: <Eye className="w-6 h-6" />,
       tech: ["Pix2Pix", "cGAN", "UNet", "PatchGAN", "SSIM", "PSNR"],
-      highlights: ["SSIM: 0.86", "Generator loss: 3.68", "256×256 output images"],
+      highlights: ["SSIM: 0.86", "Generator loss: 3.68", "256x256 output images"],
       type: "Advanced Deep Learning Project"
     },
     {
@@ -76,10 +77,10 @@ const Projects = () => {
       title: "Machine Learning - Time Series Forecasting System",
       description: "Production-ready LSTM forecasting model achieving 87.50% accuracy on air quality time-series prediction.",
       tech: ["LSTM", "Time Series", "TensorBoard", "StandardScaler"],
-      metrics: ["87.50% accuracy", "RMSE: 0.3370", "R²: 0.8109"]
+      metrics: ["87.50% accuracy", "RMSE: 0.3370", "R\u00b2: 0.8109"]
     },
     {
-      title: "Vision Transformer (ViT) for Image Classification", 
+      title: "Vision Transformer (ViT) for Image Classification",
       description: "Implemented Vision Transformer architecture achieving 97.76% validation accuracy on Cats vs Dogs dataset.",
       tech: ["Vision Transformer", "Transfer Learning", "PyTorch", "ImageNet"],
       metrics: ["97.76% validation accuracy", "24,998 images processed"]
@@ -107,82 +108,88 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            End-to-end ML solutions from research to production, showcasing expertise in deep learning and computer vision
-          </p>
-        </div>
-        
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              End-to-end ML solutions from research to production, showcasing expertise in deep learning and computer vision
+            </p>
+          </div>
+        </AnimatedSection>
+
         {/* Featured Projects */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {featuredProjects.map((project, index) => (
-            <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group animate-scale-in hover-scale">
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-primary rounded-lg text-white">
-                      {project.icon}
+            <AnimatedSection key={index} delay={index * 0.08}>
+              <Card className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group h-full">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-gradient-primary rounded-lg text-white">
+                        {project.icon}
+                      </div>
+                      <div>
+                        <Badge variant="secondary" className="text-xs mb-2">
+                          {project.type}
+                        </Badge>
+                        <CardTitle className="text-xl group-hover:text-accent transition-smooth">
+                          {project.title}
+                        </CardTitle>
+                      </div>
                     </div>
+                    <div className="flex gap-2">
+                      {project.url && (
+                        <Button variant="ghost" size="sm" asChild className="opacity-0 group-hover:opacity-100 transition-smooth">
+                          <a href={project.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="space-y-3">
                     <div>
-                      <Badge variant="secondary" className="text-xs mb-2">
-                        {project.type}
-                      </Badge>
-                      <CardTitle className="text-xl group-hover:text-accent transition-smooth">
-                        {project.title}
-                      </CardTitle>
+                      <h4 className="font-semibold text-sm mb-2">Key Achievements</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.highlights.map((highlight, i) => (
+                          <Badge key={i} variant="outline" className="bg-accent/10 text-accent border-accent/20">
+                            {highlight}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, i) => (
+                          <Badge key={i} variant="secondary" className="text-xs">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <div className="flex gap-2">
-                    {project.url && (
-                      <Button variant="ghost" size="sm" asChild className="opacity-0 group-hover:opacity-100 transition-smooth">
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Key Achievements</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.highlights.map((highlight, i) => (
-                        <Badge key={i} variant="outline" className="bg-accent/10 text-accent border-accent/20">
-                          {highlight}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
-        
+
         {/* Additional Projects Grid */}
-        <div>
+        <AnimatedSection>
           <h3 className="text-2xl font-bold mb-8 text-center">Additional Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {additionalProjects.map((project, index) => (
-              <Card key={index} className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group animate-fade-in">
+        </AnimatedSection>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {additionalProjects.map((project, index) => (
+            <AnimatedSection key={index} delay={index * 0.08}>
+              <Card className="shadow-card hover:shadow-hover transition-smooth bg-gradient-card border-0 group h-full">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg group-hover:text-accent transition-smooth">
                     {project.title}
@@ -192,7 +199,7 @@ const Projects = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="space-y-2">
                     <div>
                       <h5 className="font-medium text-xs mb-1">Metrics</h5>
@@ -204,7 +211,7 @@ const Projects = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div>
                       <h5 className="font-medium text-xs mb-1">Tech</h5>
                       <div className="flex flex-wrap gap-1">
@@ -223,8 +230,8 @@ const Projects = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
-          </div>
+            </AnimatedSection>
+          ))}
         </div>
       </div>
     </section>
