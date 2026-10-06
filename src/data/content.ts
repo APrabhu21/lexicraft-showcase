@@ -21,7 +21,7 @@ export const profile = {
 export const stats = [
   { value: "78%", label: "genome pipeline time cut (18h → 4h)" },
   { value: "221", label: "RAG eval questions, run in CI" },
-  { value: "4 days", label: "to replace Excel invoicing" },
+  { value: "10,000+", label: "genomic datasets auto-classified" },
   { value: "≥95%", label: "in-range dosing target (1–4 ppm)" },
 ];
 
@@ -74,7 +74,7 @@ export const experience: Role[] = [
     bullets: [
       "Built an LLM assistant that lets customers ask about their own sites; it queries live TimescaleDB telemetry through tool calls (Claude Haiku 4.5), with tenant isolation, streamed and spoken replies, and admin review.",
       "Engineered an H₂S chemical-dosing controller (feedforward plus PID trim) with stale-data rejection, safe fallback and shadow-mode rollout, targeting at least 95% of time in the 1–4 ppm range.",
-      "Replaced Excel invoicing (3–4 hours of weekly manual work) with an operations system: append-only chemical ledger, load reconciliation, digital BOLs and OpenInvoice export, built in 4 days.",
+      "Built an operations system in 4 days: append-only chemical ledger, tank and load reconciliation, digital BOLs and OpenInvoice export, sized for up to $750K in monthly invoices for a single customer.",
       "Designed a 221-question RAG evaluation (20 hand-written, 201 generated) that measures how documentation wording differs from customer phrasing; it runs in CI.",
       "Built a RAG service that searches PDF, DOCX and PPTX documents using hybrid retrieval plus reranking, with a CLI for ingestion, querying and synthetic Q&A generation.",
       "Built a multi-tenant SCADA monitoring platform streaming about 20 Ignition tags per site every 5 seconds over WebSockets, with site-scoped access and SMS alarms.",
