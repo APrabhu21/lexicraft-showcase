@@ -2,113 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/*
+ * Design tokens (all HSL).
+ * Palette: orange accent (28°), its complement as the dark base (208° navy),
+ * and the colour-wheel midpoint (288° violet) as the secondary accent.
+ * The site is dark-only.
+ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 211 50% 15%;
+    color-scheme: dark;
 
-    --card: 0 0% 100%;
-    --card-foreground: 211 50% 15%;
+    --background: 215 55% 5%;
+    --foreground: 30 25% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 211 50% 15%;
+    --card: 215 45% 9%;
+    --card-foreground: 30 25% 96%;
 
-    --primary: 211 100% 20%;
-    --primary-foreground: 0 0% 98%;
+    --popover: 215 45% 8%;
+    --popover-foreground: 30 25% 96%;
 
-    --secondary: 211 30% 95%;
-    --secondary-foreground: 211 100% 20%;
+    --primary: 28 100% 58%;
+    --primary-foreground: 215 55% 6%;
 
-    --muted: 211 15% 94%;
-    --muted-foreground: 211 20% 50%;
+    --secondary: 215 35% 14%;
+    --secondary-foreground: 30 25% 96%;
 
-    --accent: 211 100% 40%;
-    --accent-foreground: 0 0% 98%;
+    --muted: 215 32% 13%;
+    --muted-foreground: 215 18% 70%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 288 75% 70%;
+    --accent-foreground: 215 55% 6%;
 
-    --border: 211 20% 89%;
-    --input: 211 20% 89%;
-    --ring: 211 100% 40%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(211 100% 20%), hsl(211 100% 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(211 30% 95%), hsl(211 15% 94%));
-    --gradient-hero: linear-gradient(135deg, hsl(211 100% 20%) 0%, hsl(211 100% 30%) 50%, hsl(211 100% 40%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(211 30% 98%) 100%);
-    
-    /* Sophisticated shadows */
-    --shadow-card: 0 4px 20px -2px hsl(211 100% 20% / 0.1);
-    --shadow-hover: 0 8px 30px -4px hsl(211 100% 20% / 0.15);
-    --shadow-glow: 0 0 40px hsl(211 100% 40% / 0.2);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --border: 215 28% 20%;
+    --input: 215 28% 20%;
+    --ring: 28 100% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.9rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 211 50% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 211 50% 10%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 211 50% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 211 100% 40%;
-    --primary-foreground: 211 50% 8%;
-
-    --secondary: 211 30% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 211 30% 15%;
-    --muted-foreground: 211 20% 65%;
-
-    --accent: 211 100% 50%;
-    --accent-foreground: 211 50% 8%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 211 30% 18%;
-    --input: 211 30% 18%;
-    --ring: 211 100% 50%;
-
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(211 100% 30%), hsl(211 100% 50%));
-    --gradient-secondary: linear-gradient(135deg, hsl(211 30% 15%), hsl(211 30% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(211 100% 20%) 0%, hsl(211 100% 35%) 50%, hsl(211 100% 50%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(211 50% 10%) 0%, hsl(211 40% 12%) 100%);
-    
-    /* Dark mode shadows */
-    --shadow-card: 0 4px 20px -2px hsl(211 100% 10% / 0.3);
-    --shadow-hover: 0 8px 30px -4px hsl(211 100% 15% / 0.5);
-    --shadow-glow: 0 0 40px hsl(211 100% 50% / 0.3);
+    --glow-primary: 0 0 40px hsl(28 100% 58% / 0.25);
+    --glow-accent: 0 0 40px hsl(288 75% 70% / 0.25);
   }
 }
 
@@ -117,15 +52,64 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    cursor: none;
+  html,
+  body,
+  #root {
+    height: 100%;
   }
 
-  /* Restore default cursor on touch devices */
-  @media (hover: none) {
-    body {
-      cursor: auto;
-    }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow: hidden; /* one viewport, section-based navigation */
+    overscroll-behavior: none;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(100deg, hsl(28 100% 62%), hsl(14 95% 62%) 45%, hsl(288 75% 72%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: hsl(var(--card) / 0.62);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--border) / 0.9);
+  }
+
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

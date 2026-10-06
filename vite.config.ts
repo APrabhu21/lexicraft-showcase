@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  build: {
+    // three.js lives in a lazy-loaded chunk (the 3D scene), so its size does not block first paint
+    chunkSizeWarningLimit: 900,
+  },
   plugins: [
     react(),
     mode === 'development' &&
